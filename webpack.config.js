@@ -1,3 +1,4 @@
+const webpack = require('webpack');
 const path = require('path');
 
 module.exports = {
@@ -22,5 +23,8 @@ module.exports = {
     modules: [
       path.join(__dirname, 'node_modules'),
     ],
+  },
+  node: {
+    fs: 'empty',
   },
 };

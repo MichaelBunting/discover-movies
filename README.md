@@ -1,18 +1,14 @@
-## Netflix
+## Discover Movies
 
-Project to aggregate data from Netflix Roulette API
+Project to discover movies using data from  [https://api.themoviedb.org/](https://api.themoviedb.org/)
 
-Setup
----
+## Setup
 
 ```
 npm install
 ```
 
-
-
-Usage
----
+## Usage
 
 1. `node server.js`
 
