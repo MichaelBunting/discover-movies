@@ -1,7 +1,7 @@
 import React from 'react';
-import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 
-import MainLayout from '../components/MainLayout';
+// import MainLayout from '../components/MainLayout';
+import Routing from '../helpers/Routing';
 
 class App extends React.Component {
     constructor() {
@@ -10,9 +10,7 @@ class App extends React.Component {
 
     render() {
         return (
-            <MainLayout>
-
-            </MainLayout>
+            <Routing />
         )
     }
 }

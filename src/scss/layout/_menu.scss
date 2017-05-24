@@ -32,10 +32,15 @@
     }
 
     &__element {
+        transition: all .2s;
         color: $white;
         font-size: 20px;
         text-transform: uppercase;
         padding: 10px 20px;
+
+        &:hover {
+            color: $yellow;
+        }
 
         &.active {
             color: $yellow;
