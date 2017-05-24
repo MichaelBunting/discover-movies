@@ -15,7 +15,7 @@ gulp.task('sass', function() {
                 .pipe(notify({
                     title: "Compiled File",
                     message: "Compiled: <%= file.relative %>",
-                    icon: path.join(__dirname, 'node_modules/gulp-notify/assets', 'gulp-success.png'),
+                    icon: path.join(__dirname, 'node_modules/gulp-notify/assets', 'gulp.png'),
                 }))
                 .pipe(rename(function(path) {
                     path.basename += '.min';

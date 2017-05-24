@@ -1,10 +1,16 @@
 const webpack = require('webpack');
+const WebpackNotifierPlugin = require('webpack-notifier');
 const path = require('path');
 
 module.exports = {
   context: path.join(__dirname, 'src'),
   entry: [
     './main.js',
+  ],
+  plugins: [
+    new WebpackNotifierPlugin({
+        title: 'Webpack bundle compiled'
+    }),
   ],
   output: {
     path: path.join(__dirname, 'www'),
