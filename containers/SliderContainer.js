@@ -11,6 +11,8 @@ class SliderContainer extends React.Component {
         this.state = {
             slides: []
         }
+
+        this.getGenres = this.getGenres.bind(this);
     }
 
     componentDidMount() {
@@ -19,14 +21,30 @@ class SliderContainer extends React.Component {
 
             this.setState({
                 slides: sliderSlides
+            }, () => {
+                $('.slider').slick({
+                    arrows: false,
+                    dots: true,
+                    autoplay: true,
+                    autoplaySpeed: 6000,
+                    infinite: true,
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                    appendDots: '.slider__dots',
+                });
             });
         });
+    }
+
+    getGenres(genreId) {
+        return Api.getGenres(genreId);
     }
 
     render() {
         return (
             <Slider
-                slides={this.state.slides} />
+                slides={this.state.slides}
+                getGenres={this.getGenres}/>
         )
     }
 }

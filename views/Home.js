@@ -4,9 +4,7 @@ import SliderContainer from '../containers/SliderContainer';
 
 const Home = () => {
     return (
-        <div>
-            <SliderContainer />
-        </div>
+        <SliderContainer />
     )
 }
 

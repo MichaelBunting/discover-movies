@@ -12,11 +12,11 @@ gulp.task('sass', function() {
                 .on('error', notify.onError({
                     title: "Error compiling SCSS",
                 }))
-                .pipe(notify({
-                    title: "Compiled File",
-                    message: "Compiled: <%= file.relative %>",
-                    icon: path.join(__dirname, 'node_modules/gulp-notify/assets', 'gulp.png'),
-                }))
+                // .pipe(notify({
+                //     title: "Compiled File",
+                //     message: "Compiled: <%= file.relative %>",
+                //     icon: path.join(__dirname, 'node_modules/gulp-notify/assets', 'gulp.png'),
+                // }))
                 .pipe(rename(function(path) {
                     path.basename += '.min';
                 }))
