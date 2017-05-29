@@ -19,6 +19,10 @@ const Slider = (props) => {
                         return getGenres(id);
                     });
 
+                    if (!props.loading) {
+                        var video = props.videos[i].key;
+                    }
+
                     return (
                         <div
                             key={i}
@@ -39,6 +43,15 @@ const Slider = (props) => {
                                         })
                                     }
                                 </div>
+
+                                {!props.loading &&
+                                    <a
+                                        href={"https://www.youtube.com/watch?v=" + video}
+                                        className="btn btn--primary btn--lg slider__btn"
+                                        target="_blank">
+                                        Watch Trailer <i className="fa fa-play-circle-o slider__icon"></i>
+                                    </a>
+                                }
                             </div>
                         </div>
                     )

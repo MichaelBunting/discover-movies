@@ -1,0 +1,24 @@
+.btn {
+    transition: all .2s;
+    border: 0;
+    padding: 10px 20px;
+    background: $gray;
+    color: $white;
+    border-radius: 50px;
+    display: inline-block;
+    font-weight: 500;
+
+    &--lg {
+        padding: 15px 30px;
+        font-size: 20px;
+    }
+
+    &--primary {
+        background: $yellow;
+        color: $black;
+
+        &:hover {
+            background: lighten($yellow, 10%);
+        }
+    }
+}

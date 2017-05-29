@@ -8,6 +8,11 @@ module.exports = {
     './main.js',
   ],
   plugins: [
+    new webpack.DefinePlugin({
+        'process.env': {
+            TMDB_API_KEY: JSON.stringify('32afd7888473b024d2024908ce0df8c4'),
+        }
+    }),
     new WebpackNotifierPlugin({
         title: 'Webpack bundle compiled'
     }),
