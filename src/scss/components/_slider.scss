@@ -2,6 +2,13 @@
     position: relative;
     user-select: none;
     overflow: hidden;
+    cursor: -webkit-grab;
+    cursor: grab;
+
+    &:active {
+        cursor: -webkit-grabbing;
+        cursor: grabbing;
+    }
 
     &-container {
         width: 100%;
@@ -123,12 +130,29 @@
     }
 
     &__btn {
-        margin-top: 30px;
+        margin-top: 50px;
 
         i {
             font-size: 24px;
             vertical-align: bottom;
             margin-left: 10px;
+        }
+    }
+
+    &__date {
+        color: $yellow;
+        margin-top: 5px;
+
+        &-container {
+            transform: translate(0, -50%);
+            position: absolute;
+            bottom: 120px;
+            left: 200px;
+            color: $white;
+            z-index: 5;
+            font-size: 22px;
+            letter-spacing: 1px;
+            opacity: .8;
         }
     }
 }

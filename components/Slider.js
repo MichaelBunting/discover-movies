@@ -23,6 +23,9 @@ const Slider = (props) => {
                         var video = props.videos[i].key;
                     }
 
+                    var newDate = new Date(slide.release_date).toDateString().split(' ');
+                    var date = `${newDate[2]} ${newDate[1]}, ${newDate[3]}`;
+
                     return (
                         <div
                             key={i}
@@ -44,14 +47,18 @@ const Slider = (props) => {
                                     }
                                 </div>
 
-                                {!props.loading &&
-                                    <a
-                                        href={"https://www.youtube.com/watch?v=" + video}
-                                        className="btn btn--primary btn--lg slider__btn"
-                                        target="_blank">
-                                        Watch Trailer <i className="fa fa-play-circle-o slider__icon"></i>
-                                    </a>
-                                }
+                                <a href={"https://www.youtube.com/watch?v=" + video}
+                                    className="btn btn--primary btn--lg slider__btn"
+                                    target="_blank">
+                                    Watch Trailer <i className="fa fa-play-circle-o slider__icon"></i>
+                                </a>
+                            </div>
+
+                            <div className="slider__date-container">
+                                In theaters
+                                <div className="slider__date">
+                                    {date}
+                                </div>
                             </div>
                         </div>
                     )
