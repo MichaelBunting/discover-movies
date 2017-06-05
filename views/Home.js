@@ -1,10 +1,15 @@
 import React from 'react';
 
 import SliderContainer from '../containers/SliderContainer';
+import MovieTileContainer from '../containers/MovieTileContainer';
 
 const Home = () => {
     return (
-        <SliderContainer />
+        <div>
+            <SliderContainer />
+
+            <MovieTileContainer />
+        </div>
     )
 }
 

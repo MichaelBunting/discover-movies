@@ -96,18 +96,18 @@
     }
 
     &__content {
-        transform: translate(0, -50%);
+        transform: translate(-50%, -50%);
         position: absolute;
         top: 50%;
-        left: 200px;
+        left: 50%;
         color: $white;
         z-index: 5;
         width: 100%;
-        max-width: 60%;
+        max-width: 1200px;
     }
 
     &__title {
-        font-size: 80px;
+        font-size: 70px;
         text-transform: uppercase;
         letter-spacing: 5px;
         margin: 0;
@@ -144,15 +144,17 @@
         margin-top: 5px;
 
         &-container {
-            transform: translate(0, -50%);
+            transform: translate(-50%, -50%);
             position: absolute;
             bottom: 120px;
-            left: 200px;
+            left: 50%;
             color: $white;
             z-index: 5;
             font-size: 22px;
             letter-spacing: 1px;
             opacity: .8;
+            width: 100%;
+            max-width: 1200px;
         }
     }
 }

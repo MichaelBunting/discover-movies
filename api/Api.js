@@ -32,5 +32,23 @@ export default {
 
             callback(data.results[len]);
         });
+    },
+    getMovies: function(options, callback) {
+        var apiURL = `${baseURL}discover/movie?api_key=${process.env.TMDB_API_KEY}`;
+
+        Object.keys(options).forEach((option) => {
+            var val = options[option];
+
+            apiURL += `&${option}=${val}`;
+        });
+
+        jsonp(apiURL, (err, data) => {
+            if (err) {
+                console.error(err);
+                return false;
+            }
+
+            callback(data);
+        });
     }
 }
