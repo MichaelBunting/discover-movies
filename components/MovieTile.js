@@ -6,7 +6,7 @@ const MovieTile = (props) => {
     return (
         <div className="movie">
             <div className="movie__poster"
-                 style={{backgroundImage: `url(http://image.tmdb.org/t/p/w342${props.poster})`}}>
+                 {...props.poster ? {style: {backgroundImage: `url(http://image.tmdb.org/t/p/w342${props.poster})`}} : {}}>
             </div>
 
             <div className="movie__content">

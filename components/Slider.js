@@ -11,11 +11,11 @@ const Slider = (props) => {
 
             <div className="slider">
                 {props.slides.map((slide, i) => {
-                    var style = {
+                    const style = {
                         background: `url(http://image.tmdb.org/t/p/w1280/${slide.backdrop_path}) no-repeat center center / cover`
                     };
 
-                    var genres = slide.genre_ids.map((id) => {
+                    const genres = slide.genre_ids.map((id) => {
                         return getGenres(id);
                     });
 
@@ -23,8 +23,8 @@ const Slider = (props) => {
                         var video = props.videos[i].key;
                     }
 
-                    var newDate = new Date(slide.release_date).toDateString().split(' ');
-                    var date = `${newDate[2]} ${newDate[1]}, ${newDate[3]}`;
+                    const newDate = new Date(slide.release_date).toDateString().split(' ');
+                    const date = `${newDate[2]} ${newDate[1]}, ${newDate[3]}`;
 
                     return (
                         <div
