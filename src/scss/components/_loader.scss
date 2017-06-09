@@ -1,0 +1,61 @@
+.loader {
+    transition: all .5s;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 10;
+    background: rgba(darken($white, 2%), .8);
+    pointer-events: none;
+    opacity: 0;
+
+    &.in {
+        opacity: 1;
+        pointer-events: all;
+    }
+
+    &__content {
+        transform: translate(-50%, 0);
+        position: absolute;
+        top: 150px;
+        left: 50%;
+        font-size: 28px;
+        text-transform: uppercase;
+        text-align: center;
+        font-weight: 700;
+    }
+
+    @keyframes spin {
+        0% {
+            transform: rotate(0deg);
+        }
+        100% {
+            transform: rotate(360deg);
+        }
+    }
+
+    &__reel {
+        animation: spin 2s infinite linear;
+        width: 100%;
+        z-index: 2;
+        position: relative;
+
+        &-container {
+            width: 150px;
+            position: relative;
+            margin: 20px auto;
+        }
+
+        &-core {
+            transform: translate(-50%, -50%);
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            background: lighten($black, 15%);
+            top: 50%;
+            left: 50%;
+            position: absolute;
+        }
+    }
+}

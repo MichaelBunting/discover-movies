@@ -18,10 +18,12 @@ class MovieTileContainer extends React.Component {
                 'Popularity': 'popularity.desc',
                 'Release Date': 'release_date.desc',
                 'Rating': 'vote_average.desc'
-            }
+            },
+            loading: true,
         };
 
         this.changeFilter = this.changeFilter.bind(this);
+        this.loadingComplete = this.loadingComplete.bind(this);
     }
 
     componentDidMount() {
@@ -35,18 +37,29 @@ class MovieTileContainer extends React.Component {
             baseOptions: {
                 page: 1,
                 'primary_release_date.gte': date,
+                'vote_count.gte': 30
             }
         }, () => {
             let options = this.state.baseOptions;
 
             options.sort_by = 'popularity.desc';
 
-            Api.getMovies(options, (res) => {
-                this.setState({
-                    movies: res.results
-                });
-            });
+            this.loadMovies(options);
         });
+    }
+
+    loadMovies(options) {
+        this.setState({
+            loading: true,
+        });
+
+        Api.getMovies(options, (res) => {
+            this.setState({
+                movies: res.results
+            }, () => {
+                this.loadingComplete();
+            });
+        })
     }
 
     changeFilter(e, newFilter) {
@@ -63,16 +76,50 @@ class MovieTileContainer extends React.Component {
         options.sort_by = newFilter;
         options['vote_average.gte'] = 2;
 
-        Api.getMovies(options, (res) => {
-            this.setState({
-                movies: res.results
-            });
+        this.loadMovies(options);
+    }
+
+    loadingComplete() {
+        this.setState({
+            loading: false,
         });
     }
 
     render() {
         return (
             <div className="home-movie-grid">
+                <div className={"loader" + (this.state.loading ? ' in' : '')}>
+                    <div className="loader__content">
+                        <div className="loader__text">
+                            Loading Movies...
+                        </div>
+
+                        <div className="loader__reel-container">
+                            <div className="loader__reel-core"></div>
+
+                            <img className="loader__reel" src="./img/film-reel.png" />
+                        </div>
+                    </div>
+                </div>
+
+                {this.state.loading ?
+                (
+                    <div className="loader">
+                        <div className="loader__content">
+                            <div className="loader__text">
+                                Loading Movies...
+                            </div>
+
+                            <div className="loader__reel-container">
+                                <div className="loader__reel-core"></div>
+
+                                <img className="loader__reel" src="./img/film-reel.png" />
+                            </div>
+                        </div>
+                    </div>
+                ) :
+                ''}
+
                 <FilterBar
                     changeFilter={this.changeFilter}
                     filters={this.state.filters}/>

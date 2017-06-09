@@ -16,7 +16,13 @@ const FilterBar = (props) => {
                                    className={"filter__item" + (i === 0 ? ' active' : '')}
                                    onClick={(e) => {
                                        e.preventDefault();
-                                       props.changeFilter(e, val)
+
+                                       if (e.target.classList.contains('active')) {
+                                           return false;
+                                       }
+                                       else {
+                                           props.changeFilter(e, val)
+                                       }
                                    }}>
                                    {filterKey}
                                </a>
