@@ -1,0 +1,51 @@
+.filter {
+    display: block;
+    flex: 0 0 100%;
+    justify-content: flex-start;
+    padding: 0 20px 20px;
+
+    &__list {
+        list-style: none;
+        margin: -20px 0 0;
+        padding: 0;
+        border-bottom: 1px solid $light-gray;
+        display: flex;
+
+        li:first-child a {
+            margin-left: 0;
+        }
+        li:last-child a {
+            margin-right: 0;
+        }
+    }
+
+    &__item {
+        padding: 40px 0;
+        margin: 0 30px;
+        display: block;
+        position: relative;
+        color: $black;
+        text-transform: uppercase;
+
+        &::after {
+            transform: translate(-50%, 0);
+            transition: all .2s;
+            content: '';
+            position: absolute;
+            bottom: -1px;
+            left: 50%;
+            width: 0;
+            height: 2px;
+            background: $yellow;
+        }
+
+        &.active {
+            color: $yellow;
+            font-weight: 500;
+
+            &::after {
+                width: 100%;
+            }
+        }
+    }
+}

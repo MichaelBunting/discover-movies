@@ -19,16 +19,16 @@ class SliderContainer extends React.Component {
 
     componentDidMount() {
         Api.getUpcomingMovies((data) => {
-            var sliderSlides = data.results.slice(0, 5);
+            let sliderSlides = data.results.slice(0, 5);
 
             this.setState({
                 slides: sliderSlides
             }, () => {
-                var videos = [];
+                let videos = [];
 
-                var promise = this.state.slides.map((slide) => {
+                let promise = this.state.slides.map((slide) => {
                     return new Promise((resolve) => {
-                        var video = Api.getVideo(slide.id, (vid) => {
+                        let video = Api.getVideo(slide.id, (vid) => {
                             videos.push(vid);
                             resolve();
                         });
