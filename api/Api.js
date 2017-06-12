@@ -6,7 +6,7 @@ const baseURL = 'https://api.themoviedb.org/3/';
 
 export default {
     getUpcomingMovies: function(callback, language = 'en-US', page = 1) {
-        var apiURL = `${baseURL}movie/upcoming/?api_key=${process.env.TMDB_API_KEY}&language=${language}&page=${page}`;
+        var apiURL = `${baseURL}movie/upcoming?api_key=${process.env.TMDB_API_KEY}&language=${language}&page=${page}`;
 
         jsonp(apiURL, (err, res) => {
             if (err) {

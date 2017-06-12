@@ -4,6 +4,8 @@
     overflow: hidden;
     cursor: -webkit-grab;
     cursor: grab;
+    height: 900px;
+    background: $gray-light;
 
     &:active {
         cursor: -webkit-grabbing;
