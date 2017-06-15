@@ -23,3 +23,14 @@ img {
     max-width: 100%;
     vertical-align: middle;
 }
+
+.container {
+    position: relative;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+
+    &--tuck {
+        margin: -70px auto 100px;
+    }
+}

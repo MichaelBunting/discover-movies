@@ -87,7 +87,7 @@ class MovieTileContainer extends React.Component {
 
     render() {
         return (
-            <div className="home-movie-grid">
+            <div className="home-movie-grid container container--tuck">
                 <div className={"loader" + (this.state.loading ? ' in' : '')}>
                     <div className="loader__content">
                         <div className="loader__text">
@@ -132,7 +132,8 @@ class MovieTileContainer extends React.Component {
                                 poster={movie.poster_path}
                                 title={movie.title}
                                 genres={movie.genre_ids}
-                                rating={movie.vote_average}/>
+                                rating={movie.vote_average}
+                                id={movie.id} />
                         )
                     })
                 }

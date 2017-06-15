@@ -50,5 +50,17 @@ export default {
 
             callback(data);
         });
+    },
+    getMovieInfo: function(movieId, callback) {
+        var apiURL = `${baseURL}movie/${movieId}?api_key=${process.env.TMDB_API_KEY}&language=en-US`;
+
+        jsonp(apiURL, (err, data) => {
+            if (err) {
+                console.error(err);
+                return false;
+            }
+
+            callback(data);
+        });
     }
 }

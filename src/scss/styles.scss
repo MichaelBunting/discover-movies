@@ -3,6 +3,7 @@
 
 @import './layout/main';
 @import './layout/menu';
+@import './layout/header';
 
 @import './components/buttons';
 @import './components/slider';
@@ -11,3 +12,4 @@
 @import './components/loader';
 
 @import './pages/home';
+@import './pages/movie-info';

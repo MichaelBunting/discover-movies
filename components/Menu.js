@@ -6,7 +6,7 @@ const Menu = (props) => {
         <div className="menu">
             <Link to="/" className="menu__logo">
                 <div className="menu__logo-img">
-                    <img src="./img/video-camera.svg" />
+                    <img src="/img/video-camera.svg" />
                 </div>
                 <span className="menu__logo-text">
                     <strong>Discover</strong>Movies

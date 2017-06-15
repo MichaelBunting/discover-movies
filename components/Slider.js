@@ -30,16 +30,16 @@ const Slider = (props) => {
                         <div
                             key={i}
                             style={style}
-                            className="slider__slide">
-                            <div className="slider__content">
-                                <h2 className="slider__title">{slide.title}</h2>
+                            className="slider__slide header">
+                            <div className="header__content container">
+                                <h2 className="header__title">{slide.title}</h2>
 
-                                <div className="slider__genre-container">
+                                <div className="header__genre-container">
                                     {
                                         genres.map((genre, i) => {
                                             return (
                                                 <span key={i}
-                                                    className="slider__genre">
+                                                    className="header__genre">
                                                     {genre}
                                                 </span>
                                             )
@@ -48,15 +48,15 @@ const Slider = (props) => {
                                 </div>
 
                                 <a href={"https://www.youtube.com/watch?v=" + video}
-                                    className="btn btn--primary btn--lg slider__btn"
+                                    className="btn btn--primary btn--lg header__btn"
                                     target="_blank">
-                                    Watch Trailer <i className="fa fa-play-circle-o slider__icon"></i>
+                                    Watch Trailer <i className="fa fa-play-circle-o"></i>
                                 </a>
                             </div>
 
-                            <div className="slider__date-container">
+                            <div className="header__date-container">
                                 In theaters
-                                <div className="slider__date">
+                                <div className="header__date">
                                     {date}
                                 </div>
                             </div>
