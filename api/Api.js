@@ -52,7 +52,19 @@ export default {
         });
     },
     getMovieInfo: function(movieId, callback) {
-        var apiURL = `${baseURL}movie/${movieId}?api_key=${process.env.TMDB_API_KEY}&language=en-US`;
+        var apiURL = `${baseURL}movie/${movieId}?api_key=${process.env.TMDB_API_KEY}`;
+
+        jsonp(apiURL, (err, data) => {
+            if (err) {
+                console.error(err);
+                return false;
+            }
+
+            callback(data);
+        });
+    },
+    getCredits: function(movieId, callback) {
+        var apiURL = `${baseURL}movie/${movieId}/credits?api_key=${process.env.TMDB_API_KEY}`;
 
         jsonp(apiURL, (err, data) => {
             if (err) {

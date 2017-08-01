@@ -1,0 +1,218 @@
+.info {
+    background: $charcoal;
+    padding-bottom: 100px;
+
+    .container {
+        margin-bottom: 0;
+        position: relative;
+        z-index: 2;
+    }
+
+    &-header {
+        &::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            height: 200px;
+            background: linear-gradient(to bottom, rgba($charcoal, 0), $charcoal);
+            z-index: 2;
+        }
+    }
+
+    &__header {
+        display: flex;
+        color: $white;
+
+        &-content {
+            flex: 1 1 100%;
+            padding: 0 20px;
+        }
+    }
+
+    &__poster {
+        position: relative;
+        width: 100%;
+        padding-bottom: 150%;
+        background-size: cover;
+        background-position: center center;
+
+        &-container {
+            position: relative;
+            flex: 0 0 250px;
+        }
+    }
+
+    &__btn {
+        margin-top: 20px;
+        display: block;
+        font-size: 12px;
+        text-transform: uppercase;
+        text-align: center;
+        padding: 10px;
+        border: 1px solid $yellow;
+    }
+
+    &__title {
+        font-weight: 300;
+        font-size: 40px;
+        margin: 0;
+        margin-top: 50px;
+    }
+
+    &__genre {
+        padding: 5px 10px;
+        border: 1px solid $yellow;
+        color: $yellow;
+        font-size: 12px;
+        text-transform: uppercase;
+
+        &:not(:first-child) {
+            margin-left: 20px;
+        }
+
+        &-container {
+            margin-top: 10px;
+        }
+    }
+
+    &__rating {
+        font-size: 120px;
+        font-weight: 300;
+
+        &-container {
+            background: rgba($yellow, .8);
+            padding: 30px;
+            flex: 0 0 200px;
+            align-self: flex-start;
+            color: $charcoal;
+            text-align: center;
+            position: relative;
+        }
+
+        &-stars {
+            transform: translate(-50%, 0);
+            position: absolute;
+            top: 10px;
+            left: 50%;
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            font-size: 20px;
+
+            li {
+                font-size: 1em;
+
+                &:nth-child(2) {
+                    font-size: 1.5em;
+                }
+            }
+        }
+    }
+
+    &__section {
+        margin-top: 30px;
+    }
+
+    &__text {
+        color: $yellow;
+        font-size: 14px;
+        margin: 10px 0;
+
+        &-white {
+            color: $white;
+            text-transform: uppercase;
+            padding-right: 20px;
+            font-weight: 600;
+        }
+    }
+
+    &__popularity {
+        font-size: 20px;
+
+        .icon {
+            margin-right: 10px;
+        }
+    }
+
+    &__desc {
+        font-size: 15px;
+        line-height: 1.5;
+    }
+
+    &__credit {
+        transition: all .2s;
+        padding-bottom: 120%;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center top;
+        width: 100%;
+        position: relative;
+
+        &:hover {
+            box-shadow: 0 0 0 2px $yellow;
+            z-index: 2;
+
+            &::before,
+            &::after {
+                opacity: 1;
+                pointer-events: all;
+            }
+
+            &::after {
+                top: 50%;
+            }
+        }
+
+        &::before,
+        &::after {
+            transition: all .2s;
+            content: '';
+            position: absolute;
+            opacity: 0;
+            pointer-events: none;
+            z-index: 2;
+        }
+
+        &::before {
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background: rgba($charcoal, .7);
+        }
+
+        &::after {
+            content: attr(data-name);
+            color: $yellow;
+            font-size: 18px;
+            width: 100%;
+            padding: 0 10px;
+            text-align: center;
+            top: 55%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        &-block {
+            flex: 0 0 (100% / 6);
+        }
+
+        &-container {
+            margin-top: 20px;
+        }
+
+        &-title {
+            color: $white;
+            font-size: 12px;
+            text-transform: uppercase;
+            font-weight: 600;
+        }
+
+        &-grid {
+            margin-top: 5px;
+            display: flex;
+            flex-wrap: wrap;
+        }
+    }
+}

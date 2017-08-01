@@ -47,7 +47,7 @@ const Slider = (props) => {
                                     }
                                 </div>
 
-                                <a href={"https://www.youtube.com/watch?v=" + video}
+                                <a  {...video ? {href: `https://www.youtube.com/watch?v=${video}`} : ''}
                                     className="btn btn--primary btn--lg header__btn"
                                     target="_blank">
                                     Watch Trailer <i className="fa fa-play-circle-o"></i>

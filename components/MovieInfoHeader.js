@@ -5,7 +5,7 @@ const MovieInfoHeader = (props) => {
     const release = `${releaseDate[2]} ${releaseDate[1]}, ${releaseDate[3]}`;
 
     return (
-        <div className="header"
+        <div className="header info-header"
              {...props.backdrop ? {style: {backgroundImage: `url(http://image.tmdb.org/t/p/w1280/${props.backdrop})`}} : {}}>
             <div className="header__content container">
                 <h1 className="header__title">
