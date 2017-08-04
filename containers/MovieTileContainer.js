@@ -28,7 +28,7 @@ class MovieTileContainer extends React.Component {
 
     componentDidMount() {
         const currentDate = new Date();
-        currentDate.setFullYear(currentDate.getFullYear() - 1);
+        currentDate.setMonth(currentDate.getMonth() - 4);
 
         let date = `${currentDate.getFullYear()}-${currentDate.getMonth() + 1}-${currentDate.getDate()}`;
 
@@ -37,7 +37,7 @@ class MovieTileContainer extends React.Component {
             baseOptions: {
                 page: 1,
                 'primary_release_date.gte': date,
-                'vote_count.gte': 30
+                'vote_count.gte': 50
             }
         }, () => {
             let options = this.state.baseOptions;
@@ -74,7 +74,7 @@ class MovieTileContainer extends React.Component {
         let options = this.state.baseOptions;
 
         options.sort_by = newFilter;
-        options['vote_average.gte'] = 2;
+        options['vote_average.gte'] = 3;
 
         this.loadMovies(options);
     }
